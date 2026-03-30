@@ -26,8 +26,7 @@ steps:
       - --image=${_IMAGE_URI}
       - --region=${_REGION}
       - --platform=managed
-      - --add-cloudsql-instances=low-carbon-491109:southamerica-east1:low-carbon-postgres
-      - --set-env-vars=DATABASE_URL=postgres://lowcarbon:LowCarbonDB2026!@/identity?host=/cloudsql/low-carbon-491109:southamerica-east1:low-carbon-postgres&sslmode=disable,REDIS_ADDR=10.196.131.139:6379,JWT_SECRET=super-secret-jwt-key-change-in-production-2026
+      - --set-env-vars=USE_CLOUD_SQL_AUTH_PROXY=true,CLOUD_SQL_CONNECTION_NAME=low-carbon-491109:southamerica-east1:low-carbon-postgres,DATABASE_URL=postgres://lowcarbon:LowCarbonDB2026!@/identity?sslmode=disable,REDIS_ADDR=10.196.131.139:6379,JWT_SECRET=super-secret-jwt-key-change-in-production-2026
       - --ingress=all
 
 substitutions:
